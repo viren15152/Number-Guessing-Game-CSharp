@@ -18,9 +18,9 @@ namespace NumberGuessingGame
             while (!guessedCorrectly)
             {
                 Console.Write("Enter your guess: ");
-                string input = Console.ReadLine();
-                int guess;
+                string input = Console.ReadLine() ?? string.Empty; // Default to an empty string if null
 
+                int guess;
                 if (int.TryParse(input, out guess))
                 {
                     attempts++;
@@ -48,3 +48,4 @@ namespace NumberGuessingGame
         }
     }
 }
+
